@@ -6,3 +6,8 @@ template/
 test/
 .idea/
 package-lock.json
+tsconfig.json
+.babelrc
+.editorconfig
+.eslintignore
+.gitignore
