@@ -5,3 +5,4 @@ src/
 template/
 test/
 .idea/
+package-lock.json
