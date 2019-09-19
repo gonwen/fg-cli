@@ -1,0 +1,42 @@
+{
+    "name": "fg-cli",
+    "version": "1.0.0",
+    "description": "this is ablout vue , nuxt template cli for fg",
+    "scripts": {
+        "dev": "cross-env nodemon --inspect --watch './src' -e ts,tsx --exec 'node -r ts-node/register' ./src/index.ts",
+        "debug": "cross-env nodemon --inspect-brk --watch './src' -e ts,tsx --exec 'node -r ts-node/register' ./src/index.ts",
+        "build": "tsc"
+    },
+    "author": "gongwen <gongwen_1@163.com>",
+    "keywords": [
+        "fg",
+        "vue",
+        "nuxt",
+        "fg-cli",
+        "cli-vue",
+        "cli-nuxt",
+        "cli-nuxt-template"
+    ],
+    "bin": {
+        "fg-cli": "bin/index.js"
+    },
+    "resources": {
+        "nuxt": "gonwen/gw-nuxt-template",
+        "vue": "",
+        "vue-admin": ""
+    },
+    "devDependencies": {
+        "@types/node": "^12.6.8",
+        "chalk": "^2.4.1",
+        "co": "^4.6.0",
+        "co-prompt": "^1.0.0",
+        "commander": "^2.19.0",
+        "cross-env": "^5.2.1",
+        "download-git-repo": "^1.1.0",
+        "inquirer": "^6.2.1",
+        "nodemon": "^1.19.2",
+        "ora": "^3.0.0",
+        "ts-node": "^8.3.0",
+        "typescript": "^3.5.3"
+    }
+}
