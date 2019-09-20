@@ -1,7 +1,7 @@
 export default (param) =>
 `# ${param.name || 'gw-nuxt-template'}
 
-> ${param.desc || 'NUXT TEMPLATE FOR GW'}
+> ${param.desc || 'TEMPLATE FOR GW'}
 
 ## Build Setup
 

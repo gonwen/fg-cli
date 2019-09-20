@@ -8,14 +8,14 @@ export default [
     {
         type: 'input',
         name: 'name',
-        message: '请输入项目名称<默认为：new-nuxt-template>',
-        default: 'new-nuxt-template'
+        message: '请输入项目名称<默认为：new-template>',
+        default: 'new-template'
     },
     {
         type: 'input',
         name: 'desc',
         message: '请输入项目描述',
-        default: 'this is new nuxt-template project'
+        default: 'this is new template project'
     },
     {
         type: 'input',

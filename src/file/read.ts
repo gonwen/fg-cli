@@ -2,6 +2,8 @@ import fs from 'fs'
 import nuxtTpl from '../template/nuxt.config.tpl'
 import vueTpl from '../template/vue.index.tpl'
 import readmeTpl from '../template/readme.tpl'
+import writeTplFile from './write.tpl.file'
+
 export default (param) => {
     let base = process.cwd() + '/'
     // package
@@ -13,31 +15,18 @@ export default (param) => {
         if (param.author) json.author = param.author
         if (param.port && json.config && json.config.nuxt) json.config.nuxt.port = param.port
         json.version = '1.0.0'
-        let packagedata = JSON.stringify(json, null, 4);
+        let packagedata = JSON.stringify(json, null, 4)
         fs.writeFile(packageurl, packagedata, 'utf8', (err) => {
             if (err) throw err
             else console.log('success done')
         })
     })
-    // nuxt config
-    let nuxtconf = nuxtTpl(param)
-    let nuxturl = base + 'nuxt.config.js'
-    fs.writeFile(nuxturl, nuxtconf, 'utf8', (err) => {
-        if (err) throw err
-        else console.log('success done')
-    })
-    // vue index
-    let vueindex = vueTpl(param)
-    let vueurl = base + 'pages/index.vue'
-    fs.writeFile(vueurl, vueindex, 'utf8', (err) => {
-        if (err) throw err
-        else console.log('success done')
-    })
     // readme
-    let readme = readmeTpl(param)
-    let readmeurl = base + 'README.md'
-    fs.writeFile(readmeurl, readme, 'utf8', (err) => {
-        if (err) throw err
-        else console.log('success done')
-    })
+    writeTplFile(param, base + 'README.md', readmeTpl)
+    if (param.ptype === 'nuxt') {
+        // nuxt config
+        writeTplFile(param, base + 'nuxt.config.js', nuxtTpl)
+        // vue index
+        writeTplFile(param, base + 'pages/index.vue', vueTpl)
+    }
 }
