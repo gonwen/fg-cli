@@ -1,16 +1,14 @@
 const nuxtHeaderInfo = (param) => {
-    let str = ``
+    let str = `//`
     if (param.ptype === 'nuxt') {
-        str =
-            `head () {
-                return {
-                    title: '首页-${param.name}',
-                    meta: [
-                        {hid: 'description', name: 'description', content: '首页-${param.decs}'}
-                    ]
-                }
-            }
-            `
+        str = `head () {
+        return {
+            title: '首页-${param.name}',
+            meta: [
+                {hid: 'description', name: 'description', content: '首页-${param.decs}'}
+            ]
+        }
+    }`
     }
     return str
 }
