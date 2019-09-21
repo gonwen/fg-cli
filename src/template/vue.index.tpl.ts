@@ -26,7 +26,7 @@ export default (param) =>
 
 <script>
 export default {
-    nuxtHeaderInfo(param)
+    ${nuxtHeaderInfo(param)}
 }
 </script>
 

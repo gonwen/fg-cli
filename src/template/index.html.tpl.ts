@@ -4,7 +4,7 @@ export default (param) =>
 <head>
     <meta charset="utf-8">
     <title>${param.name || 'VUE TEMPLATE'}</title>
-    <meta name="description" content="${param.decs || 'THIS IS VUE TEMPLATE PROJECT'}"/>
+    <meta name="description" content="${param.desc || 'THIS IS VUE TEMPLATE PROJECT'}"/>
     <meta name="keywords" content="${param.name || ''}"/>
 </head>
 <body>
