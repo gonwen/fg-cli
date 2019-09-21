@@ -1,3 +1,19 @@
+const nuxtHeaderInfo = (param) => {
+    let str = ``
+    if (param.ptype === 'nuxt') {
+        str =
+            `head () {
+                return {
+                    title: '首页-${param.name}',
+                    meta: [
+                        {hid: 'description', name: 'description', content: '首页-${param.decs}'}
+                    ]
+                }
+            }
+            `
+    }
+    return str
+}
 export default (param) =>
 `<!-- 首页 -->
 <template>
@@ -10,14 +26,7 @@ export default (param) =>
 
 <script>
 export default {
-    head () {
-        return {
-            title: '首页-${param.name}',
-            meta: [
-                {hid: 'description', name: 'description', content: '首页-${param.decs}'}
-            ]
-        }
-    }
+    nuxtHeaderInfo(param)
 }
 </script>
 

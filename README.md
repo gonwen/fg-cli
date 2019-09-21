@@ -3,6 +3,7 @@
 ## this is ablout vue , nuxt template cli for fg
 
 - [gw-nuxt-template](https://github.com/gonwen/gw-nuxt-template)
+- [gw-vue-template](https://github.com/gonwen/gw-vue-template)
 
 ---
 

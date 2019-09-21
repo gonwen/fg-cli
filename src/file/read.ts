@@ -2,6 +2,9 @@ import fs from 'fs'
 import nuxtTpl from '../template/nuxt.config.tpl'
 import vueTpl from '../template/vue.index.tpl'
 import readmeTpl from '../template/readme.tpl'
+import indexHtmlTpl from '../template/index.html.tpl'
+import vueConfigTpl from '../template/vue.config.tpl'
+import vueRouterTpl from '../template/vue.router.tpl'
 import writeTplFile from './write.tpl.file'
 
 export default (param) => {
@@ -24,9 +27,12 @@ export default (param) => {
     // readme
     writeTplFile(param, base + 'README.md', readmeTpl)
     if (param.ptype === 'nuxt') {
-        // nuxt config
         writeTplFile(param, base + 'nuxt.config.js', nuxtTpl)
-        // vue index
         writeTplFile(param, base + 'pages/index.vue', vueTpl)
+    } else {
+        writeTplFile(param, base + 'index.html', indexHtmlTpl)
+        writeTplFile(param, base + 'config/index.js', vueConfigTpl)
+        writeTplFile(param, base + 'src/router/index.js', vueRouterTpl)
+        writeTplFile(param, base + 'src/components/page/index.vue', vueTpl)
     }
 }

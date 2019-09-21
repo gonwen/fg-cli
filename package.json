@@ -1,6 +1,6 @@
 {
     "name": "fg-cli",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "this is ablout vue , nuxt template cli for fg",
     "scripts": {
         "dev": "cross-env nodemon --inspect --watch './src' -e ts,tsx --exec 'node -r ts-node/register' ./src/index.ts",
