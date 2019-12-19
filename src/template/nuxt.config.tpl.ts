@@ -1,6 +1,5 @@
 export default (param) =>
 `const packageconfig = require('./package')
-import spritesMithInit from './method/spritesmith'
 module.exports = {
     /*
     ** Headers of the page
@@ -44,7 +43,20 @@ module.exports = {
     build: {
         extractCSS: !(process.env.NODE_ENVS === 'DEV'),
         extend (config, ctx) {
-            if (ctx.isDev && ctx.isClient) spritesMithInit(config) // 雪碧图插件
+            if (ctx.isDev && ctx.isClient) {
+                // eslint build
+                config.module.rules.push({
+                    enforce: 'pre',
+                    test: /\\.(js|vue)$/,
+                    loader: 'eslint-loader',
+                    exclude: /(node_modules)/,
+                    options: {
+                        fix: true
+                    }
+                })
+                // 雪碧图插件
+                require('./method/spritesmith')(config)
+            }
         }
     },
     render: {
